@@ -18,7 +18,7 @@ http.createServer(function (req, res) {
         case '/interval':
             getInterval(req, res);
             break;
-        case 'parkings':
+        case '/parkings':
             getParkings(req, res);
             break;
         default:
@@ -69,5 +69,25 @@ function getInterval(req, res) {
 }
 
 function getParkings(req, res) {
+    let query = url.parse(req.url).query;
+    let parsed = querystring.parse(query);
 
+    if (parsed.city) {
+        let dataset = cities[parsed.city];
+        let dq = new sfquery();
+        dq.addDataset(dataset);
+        let data = [];
+        dq.getParkings().subscribe(
+            d => data.push(d),
+            e => {},
+            () => {
+                res.write(JSON.stringify(data));
+                res.end();
+            }
+        )
+    } else {
+        res.writeHead(400);
+        res.write('Malformed request: Provide at least from, to and city.');
+        res.end();
+    }
 }
