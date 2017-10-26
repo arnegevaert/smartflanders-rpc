@@ -1,0 +1,15 @@
+{
+  "name": "smartflanders-rpc",
+  "version": "1.0.0",
+  "description": "RPC server for smartflanders data",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "RPC",
+    "smartflanders"
+  ],
+  "author": "Arne Gevaert",
+  "license": "ISC"
+}
