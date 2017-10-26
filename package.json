@@ -11,5 +11,8 @@
     "smartflanders"
   ],
   "author": "Arne Gevaert",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "smartflanders-data-query": "^1.0.0"
+  }
 }
