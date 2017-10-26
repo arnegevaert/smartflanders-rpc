@@ -13,6 +13,8 @@
   "author": "Arne Gevaert",
   "license": "ISC",
   "dependencies": {
-    "smartflanders-data-query": "^1.0.0"
+    "http": "0.0.0",
+    "smartflanders-data-query": "^2.0.0",
+    "url": "^0.11.0"
   }
 }
